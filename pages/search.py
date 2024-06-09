@@ -33,7 +33,7 @@ if st.query_params['q'].strip(" ") is not None:
                              {"role": m["role"], "content": m["content"]} for m in st.session_state["messages"]
                          ],
                 stream=True,
-                max_tokens=100
+                max_tokens=300
         ):
             incremental_content = response.choices[0].delta.content or ""
             full_response += incremental_content
